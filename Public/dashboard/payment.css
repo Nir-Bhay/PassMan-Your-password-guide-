@@ -1,0 +1,345 @@
+/* Add your custom CSS here */
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height:100vh;
+}
+
+.content {
+   
+width: 100%;
+height: 730px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Options and buttons section styles */
+.options-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.options-section button {
+    padding: 6px 10px;
+    margin: 10px 0;
+    background-color: #156976;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.options-section button:hover {
+    background-color: #156976d0;
+}
+
+.options-section hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.options-section h3 {
+    margin-top: 30px;
+}
+
+.options-section i{
+    width: 20px;
+    height: 20px;
+text-align: center;
+position: relative;
+top: 3px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* userdata  */
+
+/* User data section styles */
+.user-data-section {
+    margin-top: 30px;
+}
+
+.user-data-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.user-data-item p {
+    margin: 5px 0;
+}
+
+.user-data-item a {
+    display: block;
+    margin-top: 10px;
+}
+
+.user-data-item .options {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.user-data-item .options span {
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.user-data-item .options span:hover {
+    color: #007bff;
+}
+
+.user-data-item .options span.edit-btn::after {
+    content: "\vellip;";
+}
+
+.user-data-item .options span.delete-btn::after {
+    content: "\times";
+}
+
+/* Popup styles */
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 75%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: left 0.3s ease-in-out;
+}
+
+.popup.open {
+    display: block;
+    left: 50%;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Form styles */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form .password-input {
+    position: relative;
+}
+
+form .password-input input {
+    padding-right: 40px;
+}
+
+form .password-input .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+form .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+/* User data section styles */
+.user-data-section {
+    margin-top: 30px;
+}
+
+.user-data-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-data-item p {
+    margin: 5px 0;
+}
+
+.user-data-item button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-data-item button:hover {
+    background-color: #0056b3;
+}
+/* Style for login items */
+.login-item {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+   
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* Style for website links */
+.login-item span {
+    width: 20%;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+    text-decoration: none;
+   
+}
+
+/* Style for buttons (edit and delete) */
+.login-item button {
+    width: 5%;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #156976;
+    color: #fff;
+}
+
+/* Hover effect for buttons */
+.login-item button:hover {
+    background-color: #156976c6;
+}
+
+
+.datatable{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/* Popup container */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.popup.open {
+    display: block;
+}
+
+/* Popup content */
+.popup-content {
+    max-width: 600px;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+
+/* Header */
+.popup-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Login details */
+#loginDetailsContent p {
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.buttons button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Responsive Sidebar Menu HTML CSS | CodingNepal</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/9148b44fb0.js" crossorigin="anonymous"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        /* Add your custom CSS here */
+    </style>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section class="home-section">
+        <div class="content" id="Logins">
+            <!-- Options and buttons section -->
+            <div class="options-section">
+                <!-- Add new item button -->
+                <div class="usreBtn">
+                    <button id="addNewItemBtn"> <i class="bx bx-plus"></i>Add new</button>
+                    <!-- Import data button -->
+                    <button><i class='bx bxs-download'></i>Import data</button>
+                    <!-- Share button -->
+                    <button><i class='bx bx-share'></i>Share</button>
+                    <!-- View history button -->
+                    <button><i class='bx bx-history'></i>View history</button>
+                </div>
+            </div>
+            <div class="datatable">
+                <p>Website Name</p>
+                <p>User Name</p>
+                <!-- <p>Web Redirect</p> -->
+                <p>Edit</p>
+                <p>Delete</p>
+
+
+            </div>
+            <hr>
+            <!-- User data section -->
+            <div class="user-data-section" id="userDataSection">
+                <!-- Display user data here -->
+                <div class="login-item">
+                    <p class="website">Example Website</p>
+                    <p class="username">Example Username</p>
+                    <p class="password">Example Password</p>
+                </div>
+                <!-- More login items can be added here -->
+            </div>
+            <!-- Popup for adding new item -->
+            <div class="popup" id="addItemPopup">
+                <div class="popup-content">
+                    <span class="close-btn">&times;</span>
+                    <h3>Add New Item</h3>
+                    <!-- Form for adding new item -->
+                    <form id="addItemForm">
+                        <label for="loginDetails">Add a login:</label>
+                        <div id="loginDetails">
+                            <label for="website">Website:</label>
+                            <input type="url" id="website" name="website">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username">
+                            <label for="password">Password:</label>
+                            <div class="password-input">
+                                <input type="password" id="password" name="password">
+                                <span class="toggle-password">Show</span>
+                            </div>
+                            <label for="note">Note:</label>
+                            <textarea id="note" name="note"></textarea>
+                        </div>
+                        <!-- Item organization -->
+                        <label for="itemOrganization">Item organization:</label>
+                        <input type="text" id="itemOrganization" name="itemOrganization">
+                        <div class="buttons">
+                            <button type="button" id="generatePasswordBtn">Generate Password</button>
+                            <button type="submit" id="submit">Save</button>
+                            <button type="button" id="cancelBtn">Cancel</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="popup" id="loginDetailsPopup">
+                <div class="popup-content">
+                    <span class="close-btn">&times;</span>
+                    <h3>Login Details</h3>
+                    <div id="loginDetailsContent">
+                        <!-- Login details will be displayed here -->
+                    </div>
+                    <div class="buttons">
+                        <button id="editBtn">Edit</button>
+                        <button id="deleteBtn">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Show Payments content by default
+            document.getElementById("Logins").style.display = 'block';
+            document.getElementById("Payments").style.display = 'none';
+            document.getElementById("SecureNotes").style.display = 'none';
+            document.getElementById("PersonalInfo").style.display = 'none';
+            document.getElementById("IDs").style.display = 'none';
+            document.getElementById("SharingCenter").style.display = 'none';
+            document.getElementById("PasswordHealth").style.display = 'none';
+            const logout = document.getElementById("log_out");
+
+            const sidebarOptions = document.querySelectorAll('.sidebar-option');
+            const contents = document.querySelectorAll('.content');
+
+            sidebarOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const section = option.getAttribute('data-section');
+                    contents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    document.getElementById(section).style.display = 'block';
+                });
+            });
+        });
+    </script>
+    <script src="responsive-side-navigation-bar-in-html-css-javascript\responsive-side-navigation-bar-in-html-css-javascript\payment.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+                // Function to handle click on "Add new" button
+                document.getElementById('addNewItemBtn').addEventListener('click', handleAddNewItem);
+
+                // Function to handle click on "Import data" button
+                document.querySelector('.userBtn button:nth-of-type(2)').addEventListener('click', handleImportData);
+
+                // Function to handle click on "Share" button
+                document.querySelector('.userBtn button:nth-of-type(3)').addEventListener('click', handleShareData);
+
+                // Function to handle click on "View history" button
+                document.querySelector('.userBtn button:nth-of-type(4)').addEventListener('click', handleViewHistory);
+
+                // Function to handle click on login item
+                function handleLoginItemClick(event) {
+                    // Existing code for handling login item click
+                }
+
+                // Function to handle click on "Add new" button
+                function handleAddNewItem(event) {
+                    // Existing code for handling "Add new" button click
+                }
+
+                // Function to handle click on "Import data" button
+                function handleImportData(event) {
+                    // Code to confirm and download data in JSON format
+                    const confirmImport = confirm('Do you want to download the data in JSON format?');
+                    if (confirmImport) {
+                        const userData = JSON.parse(localStorage.getItem('userData')) || [];
+                        const jsonData = JSON.stringify(userData);
+                        const blob = new Blob([jsonData], { type: 'application/json' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'userdata.json';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }
+                }
+
+                // Function to handle click on "Share" button
+                function handleShareData(event) {
+                    // Code to share data with user's choice
+                    // This could involve opening a modal or a sharing dialog
+                    // For simplicity, let's just log a message
+                    console.log('Data sharing functionality will be implemented here.');
+                }
+
+                // Function to handle click on "View history" button
+                function handleViewHistory(event) {
+                    // Code to show user history
+                    // For simplicity, let's just log a message
+                    console.log('Viewing history functionality will be implemented here.');
+                }
+
+                // Function to close the popup
+                function closePopup() {
+                    // Existing code for closing the popup
+                }
+
+                // Add event listener for click on login item
+                // Existing code for adding event listener to login items
+
+                // Add event listener for close button in popup
+                // Existing code for adding event listener to close button
+
+                // Add event listener for click outside of popup to close it
+                // Existing code for adding event listener to close popup when clicking outside
+
+                // Other event listeners and functions for edit/delete functionality can be added here
+            });
+
+    </script>
+</body>
+
+</html>

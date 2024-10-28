@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Sidebar Menu HTML CSS | CodingNepal</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Boxicons CDN Link -->
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/9148b44fb0.js" crossorigin="anonymous"></script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Add your custom CSS here */
+  </style>
+  <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <li>
+        <span class="tooltip">Menu</span>
+        <a href="#">
+          <i class="bx bx-menu" id="btn"></i>
+          <span class="links_name">
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search..." />
+            <span class="tooltip">Search</span>
+          </span>
+        </a>
+      </li>
+    </div>
+    <ul class="nav-list">
+      <li class="sidebar-option" data-section="Logins">
+        <a href="#">
+          <i class="bx bx-lock"></i>
+          <span class="links_name">Logins</span>
+        </a>
+        <span class="tooltip">Logins</span>
+      </li>
+      <li class="sidebar-option" data-section="Payments">
+        <a href="#">
+          <i class="bx bx-card"></i>
+          <span class="links_name">Payments</span>
+        </a>
+        <span class="tooltip">Payments</span>
+      </li>
+      <li class="sidebar-option" data-section="SecureNotes">
+        <a href="#">
+          <i class="bx bx-note"></i>
+          <span class="links_name">Secure Notes</span>
+        </a>
+        <span class="tooltip">Secure Notes</span>
+      </li>
+      <li class="sidebar-option" data-section="PersonalInfo">
+        <a href="#">
+          <i class="bx bx-user"></i>
+          <span class="links_name">Personal Info</span>
+        </a>
+        <span class="tooltip">Personal Info</span>
+      </li>
+      <li class="sidebar-option" data-section="IDs">
+        <a href="#">
+          <i class="bx bx-id-card"></i>
+          <span class="links_name">IDs</span>
+        </a>
+        <span class="tooltip">IDs</span>
+      </li>
+      <li class="sidebar-option" data-section="SharingCenter">
+        <a href="#">
+          <i class="bx bx-share-alt"></i>
+          <span class="links_name">Sharing Center</span>
+        </a>
+        <span class="tooltip">Sharing Center</span>
+      </li>
+      <li class="sidebar-option" data-section="PasswordHealth">
+        <a href="#">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span class="links_name">Password Health</span>
+        </a>
+        <span class="tooltip">Password Health</span>
+      </li>
+      <li class="profile">
+        <a href="#">
+          <i class="bx bx-log-out" id="log_out"></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="content" id="Logins">
+      <!-- Options and buttons section -->
+      <div class="options-section">
+        <!-- Add new item button -->
+        <div class="usreBtn">
+          <button id="addNewItemBtn"> <i class="bx bx-plus"></i>Add new</button>
+          <!-- Import data button -->
+          <button><i class='bx bxs-download'></i>Import data</button>
+          <!-- Share button -->
+          <button><i class='bx bx-share'></i>Share</button>
+          <!-- View history button -->
+          <button><i class='bx bx-history'></i>View history</button>
+        </div>
+        <!-- Last used -->
+        <!-- <p>Last Used: April 20, 2024</p> -->
+        <!-- My account button -->
+        <button>My account <i class='bx bx-chevron-down'></i></button>
+        <!-- Collections -->
+        <!-- Add new collection button -->
+      </div>
+      <div class="datatable">
+        <p>Website Name</p>
+        <p>User Name</p>
+        <!-- <p>Web Redirect</p> -->
+        <p>Edit</p>
+        <p>Delete</p>
+
+
+      </div>
+      <hr>
+      <!-- User data section -->
+      <div class="user-data-section" id="userDataSection">
+        <!-- Display user data here -->
+        <div class="login-item">
+          <p class="website">Example Website</p>
+          <p class="username">Example Username</p>
+          <p class="password">Example Password</p>
+        </div>
+        <!-- More login items can be added here -->
+      </div>
+      <!-- Popup for adding new item -->
+      <div class="popup" id="addItemPopup">
+        <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <h3>Add New Item</h3>
+          <!-- Form for adding new item -->
+          <form id="addItemForm">
+            <label for="loginDetails">Add a login:</label>
+            <div id="loginDetails">
+              <label for="website">Website:</label>
+              <input type="url" id="website" name="website">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username">
+              <label for="password">Password:</label>
+              <div class="password-input">
+                <input type="password" id="password" name="password">
+                <span class="toggle-password">Show</span>
+              </div>
+              <label for="note">Note:</label>
+              <textarea id="note" name="note"></textarea>
+            </div>
+            <!-- Item organization -->
+            <label for="itemOrganization">Item organization:</label>
+            <input type="text" id="itemOrganization" name="itemOrganization">
+            <div class="buttons">
+              <button type="button" id="generatePasswordBtn">Generate Password</button>
+              <button type="submit" id="submit">Save</button>
+              <button type="button" id="cancelBtn">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <div class="popup" id="loginDetailsPopup">
+        <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <h3>Login Details</h3>
+          <div id="loginDetailsContent">
+            <!-- Login details will be displayed here -->
+          </div>
+          <div class="buttons">
+            <button id="editBtn">Edit</button>
+            <button id="deleteBtn">Delete</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="content" id="Payments">Payments</div>
+
+    <div class="content" id="SecureNotes">Secure Notes Content</div>
+
+
+
+    <div class="content" id="PersonalInfo">Personal Info Content</div>
+
+
+
+    <div class="content" id="IDs">IDs Content</div>
+
+
+
+    <div class="content" id="SharingCenter">Sharing Center Content</div>
+
+
+
+    <div class="content" id="PasswordHealth">Password Health Content</div>
+
+
+
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Show Payments content by default
+      document.getElementById("Logins").style.display = 'block';
+      document.getElementById("Payments").style.display = 'none';
+      document.getElementById("SecureNotes").style.display = 'none';
+      document.getElementById("PersonalInfo").style.display = 'none';
+      document.getElementById("IDs").style.display = 'none';
+      document.getElementById("SharingCenter").style.display = 'none';
+      document.getElementById("PasswordHealth").style.display = 'none';
+      const logout = document.getElementById("log_out");
+
+      const sidebarOptions = document.querySelectorAll('.sidebar-option');
+      const contents = document.querySelectorAll('.content');
+
+      sidebarOptions.forEach(option => {
+        option.addEventListener('click', () => {
+          const section = option.getAttribute('data-section');
+          contents.forEach(content => {
+            content.style.display = 'none';
+          });
+          document.getElementById(section).style.display = 'block';
+        });
+      });
+    });
+  </script>
+  <script src="payment.js"></script>
+</body>
+
+</html>
